@@ -1,3 +1,24 @@
+#fondo {
+  position: relative;
+  z-index: 1;
+  height: 335px;
+  width: 331px;
+  top: 9.65rem;
+  left: 1.85rem;
+}
 
+#pokedex {
+  position: absolute;
+  z-index: 3;
+}
 
-/*# sourceMappingURL=style.css.map */
+#info {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  background-color: rgb(118, 200, 232);
+  top: 10rem;
+  left: 28rem;
+  width: 335px;
+  height: 400px;
+}/*# sourceMappingURL=style.css.map */
