@@ -17,8 +17,17 @@
   z-index: 2;
   top: 0;
   background-color: rgb(118, 200, 232);
-  top: 10rem;
-  left: 28rem;
+  top: 9rem;
+  left: 38rem;
   width: 335px;
   height: 400px;
+}
+
+#normal {
+  position: absolute;
+  z-index: 1;
+  height: 70px;
+  width: 70px;
+  top: 1rem;
+  left: 11rem;
 }/*# sourceMappingURL=style.css.map */
