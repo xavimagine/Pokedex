@@ -1,3 +1,13 @@
+html {
+  margin-top: 4rem;
+}
+
+.container {
+  width: 100vh;
+  position: relative;
+  align-items: center;
+}
+
 #fondo {
   position: relative;
   z-index: 1;
@@ -18,7 +28,7 @@
   top: 0;
   background-color: rgb(118, 200, 232);
   top: 9rem;
-  left: 38rem;
+  left: 28rem;
   width: 335px;
   height: 400px;
 }
@@ -29,5 +39,23 @@
   height: 70px;
   width: 70px;
   top: 1rem;
-  left: 11rem;
+  left: 1.9rem;
+}
+
+#buscador {
+  position: absolute;
+  z-index: 3;
+  top: 31rem;
+  left: 4.2rem;
+  width: 210px;
+}
+#buscador span {
+  border-color: rgb(214, 214, 214);
+  background-color: rgb(214, 214, 214);
+  border-right-color: rgb(214, 214, 214);
+}
+#buscador input {
+  border-color: rgb(214, 214, 214);
+  background-color: rgb(214, 214, 214);
+  border-left-color: rgb(214, 214, 214);
 }/*# sourceMappingURL=style.css.map */
