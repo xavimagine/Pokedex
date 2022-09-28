@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 $fondo-pokedex :rgb(214, 214, 214);
 @mixin SearchColor {
     border-color: $fondo-pokedex;
@@ -6,24 +7,87 @@ $fondo-pokedex :rgb(214, 214, 214);
 html{
     margin-top: 4rem;
 }
+
 .container{
     width: 100vh;
     position:relative;
     align-items: center;
 }
-#fondo{
-    position:relative; 
-    z-index:1;
-    height: 335px;
-    width: 331px;
-    top: 9.65rem;
-    left:1.85rem;
-}
+    .pokecontainer{
+        #pokedex{
+            position: absolute;
+            z-index: 3;
+        }
+        #fondo{
+            position:relative; 
+            z-index:1;
+            height: 335px;
+            width: 331px;
+            top: 9.65rem;
+            left:1.85rem;
+        }
+        #normal{
+            position:absolute; 
+            z-index:1;
+            height: 70px;
+            width: 70px;
+            top: 1rem;
+            left: 1.9rem;
+        }
+    }
+    
+    #buscador{
+            position: absolute;
+            z-index: 3;
+            top: 31rem;
+            left: 4.2rem;
+            width: 210px;
+            span{
+                @include SearchColor();
+                border-right-color:$fondo-pokedex;
+                
+            }
+            input{
+                @include SearchColor();
+                border-left-color: $fondo-pokedex;
+            }
+        }
+        .screen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 3;
+            width: 334px;
+            top: 9.8rem;
+            left: 2.5rem;
+            font-family: 'Silkscreen', cursive;
+            font-size: 1.5rem;
+            font-weight: 700;
+            .pokesprit{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                z-index: 3;
+                width: 334px;
+                height: 272px;
+                top: 2.2rem;
+                left: 0rem;
+                img{
+                    object-fit: contain;
+                    height:100%;
+                }
+            }
+            .infopoke{
+                display: flex;
+                justify-content: space-between;
+            }
+    }
 
-#pokedex{
-    position: absolute;
-    z-index: 3;
-}
+
+
+
 
 #info{
     position:absolute; 
@@ -34,28 +98,4 @@ html{
     left:28rem;
     width: 335px;
     height: 400px;
-}
-#normal{
-    position:absolute; 
-    z-index:1;
-    height: 70px;
-    width: 70px;
-    top: 1rem;
-    left: 1.9rem;
-}
-#buscador{
-    position: absolute;
-    z-index: 3;
-    top: 31rem;
-    left: 4.2rem;
-    width: 210px;
-    span{
-        @include SearchColor();
-        border-right-color:$fondo-pokedex;
-        
-    }
-    input{
-        @include SearchColor();
-        border-left-color: $fondo-pokedex;
-    }
 }

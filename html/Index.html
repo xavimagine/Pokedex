@@ -13,35 +13,40 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- <div class="container">
+    <div class="container">
         <div class="pokecontainer">
             <img src="../librery/png/pokedx.png" alt="pokedex" id="pokedex">
             <div class="spinner-grow text-primary" role="status" id="normal"></div>
             <img src="../librery/background/default.png" alt="fondo" id="fondo">
             <div id="info"></div>
-    </div> -->
-
-    <div class="izquierda">
-        <form action="" onsubmit="searchPokemon(event)">
-            <div class="input-group" id="buscador">
-                <span class="input-group-text">
-                    <i class="bi bi-search"></i>
-                </span>
-                <input type="text" aria-label="First name" name ="pokemon" class="form-control">
-              </div>         
-            </form>
-            <div class="poke-card">
-                <div data-poke-name></div>
-                <div data-poke-img-container class="img-ciontainer">
-                   <img data-poke-img class="poke-img" src=""/>
-                </div>
-           </div>
-
+            <div class="izquierda">
+                <form action="" onsubmit="searchPokemon(event)">
+                    <div class="input-group" id="buscador">
+                        <span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <input type="text" aria-label="First name" name ="pokemon" class="form-control">
+                    </div>         
+                </form>
+                <div class="screen">
+                    <div data-poke-img-container class="img-container">
+                        <div class="infopoke">
+                            <div data-poke-id class="poke-type"></div>
+                            <div data-poke-name></div>
+                        </div>
+                        <div class="pokesprit">
+                            <img data-poke-img class="poke-img" src=""/>
+                        </div>
+                    </div>
+        </div>
     </div>
+    </div>
+
+  
        
        
         <div data-poke-card class="poke-card">
-            <div data-poke-id class="poke-type"></div>
+            
             <div data-poke-type class="poke-type"></div>
         </div>
     </div>

@@ -37,11 +37,11 @@ const searchPokemon = event => {
 }
 
 const renderPokemonData = data => {
-    const sprite =  data.sprites.front_default;
+    const sprite =  data.sprites.other.dream_world.front_default;
     const { stats, types } = data;
-
+console.log(data)
     // Recogemos los valores del data
     pokeName.textContent =data.name;
     pokeImg.setAttribute('src',sprite);
-    pokeId.textContent= `Nº ${data.id};`
+    pokeId.textContent= `Nº${data.id}`;
 }
