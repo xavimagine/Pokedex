@@ -16,8 +16,8 @@ html {
 .pokecontainer #fondo {
   position: relative;
   z-index: 1;
-  height: 335px;
-  width: 331px;
+  height: 21rem;
+  width: 20.665rem;
   top: 9.65rem;
   left: 1.85rem;
 }
@@ -54,12 +54,18 @@ html {
   align-items: center;
   position: absolute;
   z-index: 3;
-  width: 334px;
   top: 9.8rem;
-  left: 2.5rem;
+  left: 2.9rem;
   font-family: "Silkscreen", cursive;
   font-size: 1.5rem;
   font-weight: 700;
+}
+.screen .infopoke {
+  width: 20rem;
+}
+.screen .infopoke .nombre {
+  display: flex;
+  justify-content: flex-end;
 }
 .screen .pokesprit {
   display: flex;
@@ -68,18 +74,22 @@ html {
   position: absolute;
   z-index: 3;
   width: 334px;
-  height: 272px;
+  height: 237px;
   top: 2.2rem;
   left: 0rem;
 }
 .screen .pokesprit img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   height: 100%;
 }
-.screen .infopoke {
+.screen #typespkm {
+  position: absolute;
+  z-index: 3;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  top: 18rem;
+  width: 20rem;
 }
 
 #info {
@@ -91,4 +101,6 @@ html {
   left: 28rem;
   width: 335px;
   height: 400px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

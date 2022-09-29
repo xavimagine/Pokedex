@@ -21,8 +21,8 @@ html{
         #fondo{
             position:relative; 
             z-index:1;
-            height: 335px;
-            width: 331px;
+            height: 21rem;
+            width: 20.665rem;
             top: 9.65rem;
             left:1.85rem;
         }
@@ -52,18 +52,26 @@ html{
                 border-left-color: $fondo-pokedex;
             }
         }
+        
         .screen{
             display: flex;
             justify-content: center;
             align-items: center;
             position: absolute;
             z-index: 3;
-            width: 334px;
+            // width: 334px;
             top: 9.8rem;
-            left: 2.5rem;
+            left: 2.9rem;
             font-family: 'Silkscreen', cursive;
             font-size: 1.5rem;
             font-weight: 700;
+            .infopoke{
+                width: 20rem;
+                .nombre{
+                    display: flex;
+                    justify-content:flex-end; 
+                }
+            }
             .pokesprit{
                 display: flex;
                 justify-content: center;
@@ -71,7 +79,7 @@ html{
                 position: absolute;
                 z-index: 3;
                 width: 334px;
-                height: 272px;
+                height: 237px;
                 top: 2.2rem;
                 left: 0rem;
                 img{
@@ -79,11 +87,17 @@ html{
                     height:100%;
                 }
             }
-            .infopoke{
+
+            #typespkm{
+                position: absolute;
+                z-index: 3;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
+                align-items: center;
+                top: 18rem;
+                width: 20rem;
             }
-    }
+        }          
 
 
 
