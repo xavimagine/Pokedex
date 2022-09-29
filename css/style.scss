@@ -59,14 +59,14 @@ html{
             align-items: center;
             position: absolute;
             z-index: 3;
-            // width: 334px;
+          
             top: 9.8rem;
             left: 2.9rem;
             font-family: 'Silkscreen', cursive;
             font-size: 1.5rem;
             font-weight: 700;
             .infopoke{
-                width: 20rem;
+                width: 19.5rem;
                 .nombre{
                     display: flex;
                     justify-content:flex-end; 
@@ -88,22 +88,49 @@ html{
                 }
             }
 
-            #typespkm{
-                position: absolute;
-                z-index: 3;
+            #typespkm{ 
+                width: 300px;
+                margin-left: 8px;
+                margin-top: 16rem;
+                z-index: 2;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                top: 18rem;
-                width: 20rem;
+                justify-content: space-between;
+                align-content: space-between;
+                font-family: "Silkscreen", cursive;
+                font-size: 1rem;
+
+                div{
+                    font-size: 1rem;
+                    text-align: center;
+                    width: 130px;
+                    background-color: rgba(107, 107, 107, 0.836);
+                    border-radius: 12px;
+                }
             }
         }          
 
-
-
-
-
+        .derecha{
+            display: flex;
+            justify-content: space-around;
+            align-content:space-around ;
+            position: absolute;
+            z-index: 3;
+            width: 250px;
+            font-weight: 100;
+            top: 12rem;
+            left: 32rem;
+            font-family: "Silkscreen", cursive;
+            font-size: 1rem;
+            div{
+                display: flex;
+                justify-content: space-between;
+                align-content: space-around;
+                padding: 5px;
+               
+            }
+        }
 #info{
+   
     position:absolute; 
     z-index:2;
     top: 0;

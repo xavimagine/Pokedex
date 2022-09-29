@@ -56,14 +56,14 @@ const searchPokemon = event => {
 }
 
 const renderPokemonData = data => {
-    const sprite =  data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    const sprite =  data.sprites.front_default;
     const { stats, types } = data;
-    console.log(types)
     // Recogemos los valores del data
     pokeName.textContent =data.name;
     pokeImg.setAttribute('src',sprite);
     pokeId.textContent= `Nº${data.id}`;
     renderPokemonType(types);
+    renderStats(stats);
 }
 // Cambiar el fondo segun los tipos
 // const setBackground = types =>{
@@ -73,16 +73,39 @@ const renderPokemonData = data => {
 const renderPokemonType = types =>{
     pokeTypes.innerHTML='';
     // resetealos tipos para una nueva busqueda
+
+    
     types.forEach(type => {
         const typeTextElement = document.createElement("div");
-        console.log(typeTextElement)
         typeTextElement.style.color = typeColors[type.type.name];
         typeTextElement.textContent= type.type.name;
         pokeTypes.appendChild(typeTextElement);
-        console.log(poke)
     });
 }
 
+const renderStats = stats =>{
+    pokeStats.innerHTML='';
+    stats.forEach(stat => {
+        const statElement = document.createElement("div");
+        const statElementName = document.createElement("div");
+        const statElementNumber = document.createElement("div");
+        statElementName.textContent= stat.stat.name;
+        statElementNumber.textContent= stat.base_stat;
+        statElement.appendChild(statElementName);
+        statElement.appendChild(statElementNumber);
+        pokeStats.appendChild(statElement);
+        console.log(statElementNumber)
+    });
+}
+const renderNotFound = () => {
+    if()
+    pokeName.textContent = 'No encontrado';
+    pokeImg.setAttribute('src', '');
+  
+    pokeTypes.innerHTML = '';
+    pokeStats.innerHTML = '';
+    pokeId.textContent = '';
+}
 
 // function cambiarFondo){
 //     document.getElementById("fondo").src="image2.jpg";
