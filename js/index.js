@@ -5,26 +5,9 @@ const pokeImgContainer = document.querySelector('[data-poke-img-container]');
 const pokeId = document.querySelector('[data-poke-id]');
 const pokeTypes = document.querySelector('[data-poke-types]');
 const pokeStats = document.querySelector('[data-poke-stats]');
+const pokeBG = document.querySelector('[data-poke-background]');
 
-const typeBakcground = {
-    electric:'../librery/background/',
-    normal:'../librery/background/',
-    fire:'../librery/background/fuego.png',
-    water:'../librery/background/agua.png',
-    ice:'../librery/background/hielo.png',
-    rock:'../librery/background/roca.png',
-    flying:'../librery/background/volador.png',
-    grass:'../librery/background/planta.png',
-    psychic:'../librery/background/psiquico.png',
-    ghosth:'../librery/background/fantasma.png',
-    bug:'../librery/background/planta.png',
-    poison:'../librery/background/planta.png',
-    ground:'../librery/background/rock',
-    dragon:'../librery/background/volador.png',
-    steel:'../librery/background/roca.png',
-    fighting:'../librery/background/',
-    default:'../librery/background/default.png',
-};
+
 const typeColors = {
     electric: '#FFEA70',
     normal: '#B09398',
@@ -52,36 +35,42 @@ const searchPokemon = event => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
         .then(data => data.json())
         .then(response => renderPokemonData(response))
-        .catch(err => renderNotFound())
+        .catch(_err => renderNotFound())
 }
 
 const renderPokemonData = data => {
     const sprite =  data.sprites.front_default;
+    
     const { stats, types } = data;
+   
     // Recogemos los valores del data
     pokeName.textContent =data.name;
     pokeImg.setAttribute('src',sprite);
     pokeId.textContent= `Nº${data.id}`;
+    
     renderPokemonType(types);
     renderStats(stats);
+    cambiarFondo(types);
+    
 }
-// Cambiar el fondo segun los tipos
-// const setBackground = types =>{
-//     // const oneType =
-// }
+
+
 // types de los pokemons
 const renderPokemonType = types =>{
     pokeTypes.innerHTML='';
     // resetealos tipos para una nueva busqueda
-
-    
     types.forEach(type => {
         const typeTextElement = document.createElement("div");
         typeTextElement.style.color = typeColors[type.type.name];
         typeTextElement.textContent= type.type.name;
-        pokeTypes.appendChild(typeTextElement);
+        typeTextElement.className="typepoke";
+        pokeTypes.appendChild(typeTextElement); 
     });
+    
+
 }
+
+
 
 const renderStats = stats =>{
     pokeStats.innerHTML='';
@@ -94,11 +83,10 @@ const renderStats = stats =>{
         statElement.appendChild(statElementName);
         statElement.appendChild(statElementNumber);
         pokeStats.appendChild(statElement);
-        console.log(statElementNumber)
     });
 }
 const renderNotFound = () => {
-    if()
+    
     pokeName.textContent = 'No encontrado';
     pokeImg.setAttribute('src', '');
   
@@ -107,6 +95,66 @@ const renderNotFound = () => {
     pokeId.textContent = '';
 }
 
-// function cambiarFondo){
-//     document.getElementById("fondo").src="image2.jpg";
-//   }
+const cambiarFondo = types =>{
+    const typeBackground = [
+        { name : "electric", url:'../librery/background/planta.png'},
+        { name : "normal", url:'../librery/background/default.png'},
+        {name : "fire", url:'../librery/background/fuego.png'},
+        { name : "water", url:'../librery/background/agua.png'},
+        { name : "ice", url:'../librery/background/hielo.png'},
+        { name : "rock", url:'../librery/background/roca.png'},
+        { name : "flying", url:'../librery/background/volador.png'},
+        { name : "grass", url:'../librery/background/planta.png'},
+        { name : "psychic", url:'../librery/background/psiquico.png'},
+        { name : "ghosth", url:'../librery/background/fantasma.png'},
+        { name : "bug", url:'../librery/background/planta.png'},
+        { name : "poison", url:'../librery/background/planta.png'},
+        { name : "ground", url:'../librery/background/rock'},
+        { name : "dragon", url:'../librery/background/volador.png'},
+        { name : "steel", url:'../librery/background/roca.png'},
+        { name : "fighting", url:'../librery/background/'},
+        { name : "default", url:'../librery/background/default.png'}
+      ];
+    pokeBG.innerHTML = `document.getElementById("fondo").src=typeBackground.default`;
+const numTypes = types.length;
+
+    switch (numTypes) {
+        case 1:
+            types.forEach( element => {
+                const ftype = element.type.name;
+                console.log("entre")
+                console.log(ftype)
+                typeBackground.forEach(element1 => {
+                    if(element1.name === ftype){
+                        document.getElementById("fondo").src=element1.url;
+                    }
+                });
+                
+            });
+          
+               
+            break;
+        case 2:  
+        const gtypos =[];
+        types.forEach( element => {
+            const ftype = element.type.name;
+            gtypos.push(ftype);
+        });
+        types.forEach( element => {
+                 
+            typeBackground.forEach(element1 => {
+                console.log(element1[2])
+                if(element1 === gtypos[2]){
+                    console.log("entre en if")
+                    document.getElementById("fondo").src=element1.url;
+                }
+            });
+            console.log(gtypos)
+            });
+ 
+                break;
+        default:
+            document.getElementById("fondo").src=typeBackground.default;
+            break;
+    }
+  }
