@@ -154,8 +154,12 @@ const numTypes = types.length;
     }
   }
 
- const wiki= data =>{
+const wiki= data =>{
     const nombre= data.name;
-    const cambio =document.getElementsByClassName("pokwiki")  
-    cambio.href =`https://www.wikidex.net/wiki/${nombre}`
- }
+    console.log(nombre)
+    const cambio = document.getElementById("wi")  
+    const cambio2 = document.getElementById("ki")  
+
+    cambio.href=`https://www.wikidex.net/wiki/${nombre}`;
+    cambio2.href=`https://www.wikidex.net/wiki/${nombre}`;
+}
