@@ -156,13 +156,6 @@ const numTypes = types.length;
 
  const wiki= data =>{
     const nombre= data.name;
-    
-    const cambio2 =document.getElementById("pokwiki2")  
-    const cambio =document.getElementById("pokwiki")
+    const cambio =document.getElementsByClassName("pokwiki")  
     cambio.href =`https://www.wikidex.net/wiki/${nombre}`
-    cambio2.href =`https://www.wikidex.net/wiki/${nombre}`
-  
  }
-
-   
- 
