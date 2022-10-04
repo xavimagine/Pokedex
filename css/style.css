@@ -63,7 +63,30 @@ html {
 .screen .infopoke {
   width: 19.5rem;
 }
+.screen .infopoke a {
+  color: black;
+  text-decoration: none;
+}
+.screen .infopoke a :link {
+  color: black;
+}
+.screen .infopoke a :visited {
+  color: rgb(31, 31, 31);
+}
+.screen .infopoke div :hover {
+  opacity: 1;
+  color: black;
+  background-color: white;
+}
+.screen .infopoke .idpk {
+  margin-left: 9px;
+  background-color: rgba(107, 107, 107, 0.836);
+  border-radius: 12px;
+}
 .screen .infopoke .nombre {
+  margin-left: 42px;
+  background-color: rgba(107, 107, 107, 0.836);
+  border-radius: 12px;
   display: flex;
   justify-content: flex-end;
 }
@@ -79,7 +102,8 @@ html {
   left: 0rem;
 }
 .screen .pokesprit img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 100%;
 }
 .screen #typespkm {
@@ -92,6 +116,10 @@ html {
   align-content: space-between;
   font-family: "Silkscreen", cursive;
   font-size: 1rem;
+}
+.screen #typespkm :hover {
+  opacity: 1;
+  background-color: white;
 }
 .screen #typespkm div {
   font-size: 1rem;
@@ -130,6 +158,4 @@ html {
   left: 28rem;
   width: 335px;
   height: 400px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

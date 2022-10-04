@@ -51,7 +51,7 @@ const renderPokemonData = data => {
     renderPokemonType(types);
     renderStats(stats);
     cambiarFondo(types);
-    
+    wiki(data);
 }
 
 
@@ -97,8 +97,8 @@ const renderNotFound = () => {
 
 const cambiarFondo = types =>{
     const typeBackground = [
-        { name : "electric", url:'../librery/background/planta.png'},
-        { name : "normal", url:'../librery/background/default.png'},
+        { name : "electric", url:'../librery/background/electrico.png'},
+        { name : "normal", url:'../librery/background/normal.png'},
         {name : "fire", url:'../librery/background/fuego.png'},
         { name : "water", url:'../librery/background/agua.png'},
         { name : "ice", url:'../librery/background/hielo.png'},
@@ -108,11 +108,11 @@ const cambiarFondo = types =>{
         { name : "psychic", url:'../librery/background/psiquico.png'},
         { name : "ghosth", url:'../librery/background/fantasma.png'},
         { name : "bug", url:'../librery/background/planta.png'},
-        { name : "poison", url:'../librery/background/planta.png'},
+        { name : "poison", url:'../librery/background/veneno.png'},
         { name : "ground", url:'../librery/background/rock'},
-        { name : "dragon", url:'../librery/background/volador.png'},
-        { name : "steel", url:'../librery/background/roca.png'},
-        { name : "fighting", url:'../librery/background/'},
+        { name : "dragon", url:'../librery/background/dragon.png'},
+        { name : "steel", url:'../librery/background/metal.png'},
+        { name : "fighting", url:'../librery/background/lucha.png'},
         { name : "default", url:'../librery/background/default.png'}
       ];
     pokeBG.innerHTML = `document.getElementById("fondo").src=typeBackground.default`;
@@ -122,8 +122,6 @@ const numTypes = types.length;
         case 1:
             types.forEach( element => {
                 const ftype = element.type.name;
-                console.log("entre")
-                console.log(ftype)
                 typeBackground.forEach(element1 => {
                     if(element1.name === ftype){
                         document.getElementById("fondo").src=element1.url;
@@ -140,16 +138,13 @@ const numTypes = types.length;
             const ftype = element.type.name;
             gtypos.push(ftype);
         });
-        types.forEach( element => {
-                 
-            typeBackground.forEach(element1 => {
-                console.log(element1[2])
-                if(element1 === gtypos[2]){
+        console.log(gtypos)
+        typeBackground.forEach( element => {
+                if(gtypos[1] === element.name){
                     console.log("entre en if")
-                    document.getElementById("fondo").src=element1.url;
+                    document.getElementById("fondo").src=element.url;
                 }
-            });
-            console.log(gtypos)
+       
             });
  
                 break;
@@ -158,3 +153,16 @@ const numTypes = types.length;
             break;
     }
   }
+
+ const wiki= data =>{
+    const nombre= data.name;
+    
+    const cambio2 =document.getElementById("pokwiki2")  
+    const cambio =document.getElementById("pokwiki")
+    cambio.href =`https://www.wikidex.net/wiki/${nombre}`
+    cambio2.href =`https://www.wikidex.net/wiki/${nombre}`
+  
+ }
+
+   
+ 
