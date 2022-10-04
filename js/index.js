@@ -97,23 +97,23 @@ const renderNotFound = () => {
 
 const cambiarFondo = types =>{
     const typeBackground = [
-        { name : "electric", url:'../librery/background/electrico.png'},
-        { name : "normal", url:'../librery/background/normal.png'},
-        {name : "fire", url:'../librery/background/fuego.png'},
-        { name : "water", url:'../librery/background/agua.png'},
-        { name : "ice", url:'../librery/background/hielo.png'},
-        { name : "rock", url:'../librery/background/roca.png'},
-        { name : "flying", url:'../librery/background/volador.png'},
-        { name : "grass", url:'../librery/background/planta.png'},
-        { name : "psychic", url:'../librery/background/psiquico.png'},
-        { name : "ghosth", url:'../librery/background/fantasma.png'},
-        { name : "bug", url:'../librery/background/planta.png'},
-        { name : "poison", url:'../librery/background/veneno.png'},
-        { name : "ground", url:'../librery/background/rock'},
-        { name : "dragon", url:'../librery/background/dragon.png'},
-        { name : "steel", url:'../librery/background/metal.png'},
-        { name : "fighting", url:'../librery/background/lucha.png'},
-        { name : "default", url:'../librery/background/default.png'}
+        { name : "electric", url:'librery/background/electrico.png'},
+        { name : "normal", url:'librery/background/normal.png'},
+        {name : "fire", url:'librery/background/fuego.png'},
+        { name : "water", url:'librery/background/agua.png'},
+        { name : "ice", url:'librery/background/hielo.png'},
+        { name : "rock", url:'librery/background/roca.png'},
+        { name : "flying", url:'librery/background/volador.png'},
+        { name : "grass", url:'librery/background/planta.png'},
+        { name : "psychic", url:'librery/background/psiquico.png'},
+        { name : "ghosth", url:'librery/background/fantasma.png'},
+        { name : "bug", url:'librery/background/planta.png'},
+        { name : "poison", url:'librery/background/veneno.png'},
+        { name : "ground", url:'librery/background/rock'},
+        { name : "dragon", url:'librery/background/dragon.png'},
+        { name : "steel", url:'librery/background/metal.png'},
+        { name : "fighting", url:'librery/background/lucha.png'},
+        { name : "default", url:'librery/background/default.png'}
       ];
     pokeBG.innerHTML = `document.getElementById("fondo").src=typeBackground.default`;
 const numTypes = types.length;
